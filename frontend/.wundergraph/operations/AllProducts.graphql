@@ -6,16 +6,9 @@ query AllProducts {
         title
         price
         image
+        description
         review_score
         review_count
-        category {
-          data {
-            id
-            attributes {
-              name
-            }
-          }
-        }
       }
     }
   }

@@ -35,8 +35,8 @@ const NavBar = (props: Props) => {
         </li>
         <li className="float-right">
           <a
-            className="block py-3 px-4 text-center text-white no-underline"
-            href="#cart"
+            className="block py-3 px-4 text-center text-white no-underline snipcart-checkout"
+            href="#"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

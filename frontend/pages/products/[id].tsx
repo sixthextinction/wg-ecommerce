@@ -1,49 +1,52 @@
+/* WG generated hooks */
 import { useQuery, withWunderGraph } from "../../components/generated/nextjs";
-import NavBar from "../../components/NavBar";
+/* NextJS stuff */
 import Image from "next/image";
 import { useRouter } from "next/router";
-
+/* my components */
+import NavBar from "../../components/NavBar";
 /* types */
-type categoryAttributes = {
-  name: string;
-};
+import { result } from "../../types/OneProductResult"
+// /* types */
+// type categoryAttributes = {
+//   name: string;
+// };
 
-type category = {
-  data: {
-    id: string;
-    attributes: categoryAttributes;
-  };
-};
+// type category = {
+//   data: {
+//     id: string;
+//     attributes: categoryAttributes;
+//   };
+// };
 
-type productAttributes = {
-  slug: string;
-  title: string;
-  price: number;
-  image: string;
-  description: string;
-  review_score: number;
-  review_count: number;
-  category: category;
-};
+// type productAttributes = {
+//   title: string;
+//   price: number;
+//   image: string;
+//   description: string;
+//   review_score: number;
+//   review_count: number;
+//   category: category;
+// };
 
-type product = {
-  id: string;
-  attributes: productAttributes;
-};
+// type product = {
+//   id: string;
+//   attributes: productAttributes;
+// };
 
-type products = {
-  data: product[];
-};
+// type products = {
+//   data: product[];
+// };
 
-type queryData = {
-  backend_products: products;
-  refetching: boolean;
-};
+// type queryData = {
+//   backend_products: products;
+//   refetching: boolean;
+// };
 
-type result = {
-  status: string;
-  data: queryData;
-};
+// type result = {
+//   status: string;
+//   data: queryData;
+// };
 
 type Props = {};
 
@@ -80,7 +83,12 @@ const Product = (props: Props) => {
               <h3 className="text-lg text-zinc-100 mt-2 mb-2 "> {data?.review_score} ⭐ </h3>
               <h3 className="text-lg text-zinc-100 mt-2 mb-2 "> {data?.review_count} reviews </h3>
               <h3 className="text-lg bg-amber-500 text-black mt-2 mb-2 "> {data?.category.data.attributes.name} </h3>
-              <button className="text-xl font-bold bg-zinc-100 text-black mt-2 mb-2 ">
+              <button className="text-xl font-bold bg-zinc-100 text-black mt-2 mb-2 snipcart-add-item"
+              data-item-id={oneProduct.data?.backend_products?.data[0].id}
+              data-item-price={""+data?.price}
+              data-item-description={data?.description}
+              data-item-image={data?.image}
+              data-item-name={data?.title}>
                 Add To Cart 🛒
               </button>
             </div>

@@ -47,16 +47,9 @@ export interface AllProductsResponseData {
 				title?: string;
 				price?: number;
 				image?: string;
+				description?: string;
 				review_score?: number;
 				review_count?: number;
-				category?: {
-					data?: {
-						id?: string;
-						attributes?: {
-							name?: string;
-						};
-					};
-				};
 			};
 		}[];
 	};

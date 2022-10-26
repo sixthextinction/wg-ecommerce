@@ -16,14 +16,15 @@ const ProductCard = (props: Props) => {
 
   const routeTo = (productId) => {
     router.push({
-      pathname: `/products/${productId}`
+      pathname: `/products/${productId}`,
     });
   };
   return (
     <div className={styles.container}>
-      <div className={styles.card} onClick={() => routeTo(props.id)}>
+      <div className={styles.card}>
         <div className={styles.imgBx}>
           <Image
+            onClick={() => routeTo(props.id)}
             className="img"
             src={props.image}
             alt="Product image"
@@ -34,7 +35,7 @@ const ProductCard = (props: Props) => {
 
         <div className={styles.contentBx}>
           <div className={styles.title}>
-            <h2>{props.title}</h2>
+            <h2 onClick={() => routeTo(props.id)}>{props.title}</h2>
           </div>
 
           <div className={styles.rating}>
@@ -52,10 +53,13 @@ const ProductCard = (props: Props) => {
           <div className={styles.cartBtn}>
             {/* <a href="#">Add 🛒</a> */}
             <button
-              className="w-full text-xl font-bold text-gray-800"
-              onClick={() => alert("clicked!")}
+              className="snipcart-add-item"
+              data-item-id={props.id}
+              data-item-price={""+props.price}
+              data-item-description={props.description}
+              data-item-image={props.image}
+              data-item-name={props.title}
             >
-              {" "}
               Add 🛒
             </button>
           </div>
