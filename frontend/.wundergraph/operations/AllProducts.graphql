@@ -1,0 +1,22 @@
+query AllProducts {
+  backend_products {
+    data {
+      id
+      attributes {
+        title
+        price
+        image
+        review_score
+        review_count
+        category {
+          data {
+            id
+            attributes {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}

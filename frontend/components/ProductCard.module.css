@@ -1,0 +1,195 @@
+/* body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #131313;
+} */
+
+.container {
+  position: relative;
+  /* font-family:  */
+}
+
+.container .card {
+  position: relative;
+  width: 300px;
+  height: 420px;
+  background: #232323;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* .container .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1BBFE9;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.container .card:hover:before {
+    clip-path: circle(300px at 80% -20%);
+} */
+
+/* .container .card:after {
+    content: "Nike";
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-size: 12em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.04);
+
+} */
+
+.container .card .imgBx {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  /* transition: 0.5s; */
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+
+/* product image */
+.container .card:hover .imgBx {
+  /* top: 0%;
+  transform: translateY(-25%); */
+  opacity: 0.1;
+  /* bug  */
+}
+
+.container .card .imgBx .img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  width: 270px;
+}
+
+.container .card .contentBx {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+}
+
+.container .card:hover .contentBx {
+  height: 210px;
+}
+
+.container .card .contentBx .title h2 {
+  position: relative;
+  display: block !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  color: #fff;
+
+  /* truncating h2 with ellipsis */
+  overflow: hidden;
+  max-width: 75ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* a simple highlight */
+.container .card .contentBx .price {
+  /* border: 2px solid red; */
+  background-color: rgb(244 244 245);
+}
+
+.container .card .contentBx .price,
+.container .card .contentBx .rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;
+}
+
+.container .card .contentBx .price {
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
+.container .card .contentBx .rating {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* show full h2 on hover */
+.container .card:hover .contentBx .title h2 {
+  overflow: visible;
+  white-space: normal;
+  width: auto;
+}
+
+/* move title, price, rating up to center of card on hover */
+.container .card:hover .contentBx .title,
+.container .card:hover .contentBx .price,
+.container .card:hover .contentBx .rating,
+.container .card:hover .contentBx .cartBtn {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-100px);
+}
+
+.container .card .contentBx .price h3,
+.container .card .contentBx .rating h3 {
+  color: white;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+/* add to cart button */
+.container .card .contentBx a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  /* color: #111; */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+}
+
+.container .card:hover .contentBx a {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.cartBtn {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(245 158 11);
+  height: 50px;
+}
+
+.cartBtn button {
+    /* z-index: 999; */
+    padding: 20px;
+}

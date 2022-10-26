@@ -1,0 +1,23 @@
+query GetProductByID($id: ID!) {
+  backend_products(filters: {id: {eq: $id}} ) {
+    data{
+      id
+      attributes {
+        title
+        image
+        price
+        description
+        review_score
+        review_count
+        category {
+          data {
+            id
+            attributes {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}

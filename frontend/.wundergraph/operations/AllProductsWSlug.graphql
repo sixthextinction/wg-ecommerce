@@ -1,0 +1,24 @@
+query AllProductsWSlug {
+  backend_products {
+    data {
+      id
+      attributes {
+        slug
+        title
+        price
+        image
+        description
+        review_score
+        review_count
+        category {
+          data {
+            id
+            attributes {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
