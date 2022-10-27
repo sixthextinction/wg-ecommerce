@@ -1,6 +1,9 @@
+/* NextJS stuff */
 import Image from "next/image";
 import { useRouter } from "next/router";
+/* my styles */
 import styles from "./ProductCard.module.css";
+
 type Props = {
   id: string;
   title: string;

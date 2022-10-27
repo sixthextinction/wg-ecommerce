@@ -12,7 +12,7 @@ import { result } from "../types/AllProductsResult";
 const Home: NextPage = () => {
   const allProducts = useQuery.AllProducts({
     input: { a: { pageSize: 10 } },
-  }).result as result; // type assertion because I explicitly don't want it checking for missing properties while coming from ResultLazy
+  }).result as result; 
 
   return (
     <div>

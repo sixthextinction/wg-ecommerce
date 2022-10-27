@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 /* my components */
 import NavBar from "../../components/NavBar";
 /* types */
-import { result } from "../../types/OneProductResult"
+import { result } from "../../types/OneProductResult";
 // /* types */
 // type categoryAttributes = {
 //   name: string;
@@ -52,7 +52,8 @@ type Props = {};
 
 const Product = (props: Props) => {
   const router = useRouter();
-  const { id: productId } = router.query;
+  const { id  } = router.query;
+  const productId: string = id as string;
 
   const oneProduct = useQuery.ProductByID({
     input: { id: productId },
@@ -78,17 +79,37 @@ const Product = (props: Props) => {
               <h1 className="text-4xl font-bold text-zinc-100">
                 {data?.title}
               </h1>
-              <h2 className="text-2xl font-bold bg-amber-500 text-black mt-2 mb-2 "> ${data?.price} </h2>
-              <h2 className="text-xl text-neutral-400 mt-2 mb-2 "> {data?.description} </h2>
-              <h3 className="text-lg text-zinc-100 mt-2 mb-2 "> {data?.review_score} ⭐ </h3>
-              <h3 className="text-lg text-zinc-100 mt-2 mb-2 "> {data?.review_count} reviews </h3>
-              <h3 className="text-lg bg-amber-500 text-black mt-2 mb-2 "> {data?.category.data.attributes.name} </h3>
-              <button className="text-xl font-bold bg-zinc-100 text-black mt-2 mb-2 snipcart-add-item"
-              data-item-id={oneProduct.data?.backend_products?.data[0].id}
-              data-item-price={""+data?.price}
-              data-item-description={data?.description}
-              data-item-image={data?.image}
-              data-item-name={data?.title}>
+              
+              <h2 className="text-2xl p-2 font-bold bg-amber-500 text-black mt-2 mb-2 ">
+                ${data?.price}
+              </h2>
+              <h2 className="text-lg text-neutral-400 mt-2 mb-2 ">
+                {data?.description}
+              </h2>
+              <h3 className="text-xl text-zinc-100 mt-2 mb-2 ">
+                {data?.review_score} ⭐
+              </h3>
+              <h3 className="text-lg text-zinc-100 mt-2 mb-2 ">
+                {data?.review_count} reviews
+              </h3>
+              {/* <div className="flex flex-row">
+                <h3 className="w-fit pt-1 pb-1 pl-2 pr-1 rounded-l-lg bg-zinc-50 text-lg font-bold text-black mt-2 mb-2 ">
+                  in
+                </h3>
+                <h3 className="w-fit p-1 rounded-r-lg  text-lg bg-cyan-200 text-gray-800 mt-2 mb-2 ">
+                  {data?.category.data.attributes.name}
+                </h3>
+              </div> */}
+              
+
+              <button
+                className="p-3 text-xl font-bold bg-zinc-100 text-black mt-2 mb-2 snipcart-add-item"
+                data-item-id={oneProduct.data?.backend_products?.data[0].id}
+                data-item-price={"" + data?.price}
+                data-item-description={data?.description}
+                data-item-image={data?.image}
+                data-item-name={data?.title}
+              >
                 Add To Cart 🛒
               </button>
             </div>

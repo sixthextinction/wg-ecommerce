@@ -1,8 +1,7 @@
+/* NextJS stuff */
 import Script from "next/script";
 
-type Props = {};
-
-const Snipcart = (props: Props) => {
+const Snipcart = () => {
   return ( 
     <>
       <Script
