@@ -53,7 +53,7 @@ type Props = {};
 const Product = (props: Props) => {
   const router = useRouter();
   const { id  } = router.query;
-  const productId: string = id as string;
+  const productId: string = id as string; // needed because id as is will be of type string[] | string (union)
 
   const oneProduct = useQuery.ProductByID({
     input: { id: productId },
