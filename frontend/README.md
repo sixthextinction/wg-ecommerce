@@ -5,8 +5,8 @@ cd into ./backend, and then
 ```npm run strapi develop```
 
 ## Strapi Admin credentials
-```USERNAME : sameastheoldboss@whosnext.com
-PASSWORD : Aaaa1234567890```
+```USERNAME : sameastheoldboss@whosnext.com```
+```PASSWORD : Aaaa1234567890```
 
 
 # Wundergraph + Next.js
