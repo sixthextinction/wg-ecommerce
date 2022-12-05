@@ -1,5 +1,7 @@
 # wg-ecommerce
 
+A GraphQL eCommerce app, using Strapi as the backend, WunderGraph as the Backend-for-frontend, and a Next.js frontend with SnipCart integration.
+
 
 # 1. Strapi PIM
 cd into ./backend, and then
