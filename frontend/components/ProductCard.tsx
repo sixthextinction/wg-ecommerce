@@ -16,12 +16,13 @@ type Props = {
 
 const ProductCard = (props: Props) => {
   const router = useRouter();
-
+  // handle click on Product Image
   const routeTo = (productId) => {
     router.push({
       pathname: `/products/${productId}`,
     });
   };
+  
   return (
     <div className={styles.container}>
       <div className={styles.card}>
